@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway-server
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+server:
+  servlet:
+    context-path: /api
+  port: 7071
+
+zuul:
+#  prefix: /service
+  routes:
+#    routing of user-services
+    user-service:
+      path: /user-service/**
+      serviceId: user-service
+      strip-prefix: false
+
+      #    routing of booking-services
+    booking-service:
+      path: /booking-service/**
+      serviceId: booking-service
+      strip-prefix: false
