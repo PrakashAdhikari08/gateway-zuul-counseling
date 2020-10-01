@@ -25,3 +25,6 @@ zuul:
       path: /booking-service/**
       serviceId: booking-service
       strip-prefix: false
+ribbon:
+  connectTimeout : 50000
+  readTimeout : 50000
